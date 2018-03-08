@@ -9,3 +9,7 @@ input:focus {
 textarea {
   width: 100%;
 }
+
+.panel-body {
+	width: 100%;
+}
