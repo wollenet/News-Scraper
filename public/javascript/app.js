@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 
-	var articleList = [];
+	var article1 = [];
 	var articleId = '';
 	var article = '';
 	var previousArticle = 0;
@@ -17,22 +17,22 @@ $(document).ready(function(){
 
 	$(document).on('click','#getArticles', function(){
 		$.getJSON('/articles', function(data){
-			articleList = data;
-			article = articleList[0];
+			article1 = data;
+			article = article1[0];
 			showArticle(article);
 		}); 		
 	});
 
 
 	$(document).on('click','.previous', function(){
-		article = articleList[previousArticle];
+		article = article1[previousArticle];
 		currentArticle = previousArticle;
 		showArticle(article);
 	}); 
 
 
 	$(document).on('click','.next', function(){
-		article = articleList[nextArticle];
+		article = article1[nextArticle];
 		currentArticle = nextArticle;
 		showArticle(article);
 	}); 
@@ -80,7 +80,7 @@ $(document).ready(function(){
 			$('#navigation').append('<button id="'+previousArticle+'" class="btn btn-primary disabled previous">Previous Article</button>');
 		}
 		nextArticle = currentArticle + 1;
-		if(nextArticle < articleList.length) {
+		if(nextArticle < article1.length) {
 			$('#navigation').append('<button id="'+nextArticle+'" class="btn btn-primary pull-right next">Next Article</button>');
 		} else {
 			$('#navigation').append('<button id="'+nextArticle+'" class="btn btn-primary pull-right disabled next">Next Article</button>');
