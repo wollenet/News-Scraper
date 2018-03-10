@@ -60,11 +60,11 @@ router.get('/scrape', function(req, res){
 				summary: summary
 			});	
 
-			article.findOne({'titles': titles}, function(err, articleRecord) {
+			article.findOne({'titles': titles}, function(err, articleRecorded) {
 				if(err) {
 					console.log(err);
 				} else {
-					if(articleRecord == null) {
+					if(articleRecorded == null) {
 						article.create(result[i], function(err, record) {
 							if(err) throw err;
 							console.log("Record Added");
