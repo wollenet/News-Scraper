@@ -10,7 +10,7 @@ var articlesSchema = new mongoose.Schema({
 	storyLink: {
 		type: String, 
 	},
-	summary: {
+	textsummary: {
 		type: String, 
 	},		
 	createdAt: {

@@ -23,13 +23,13 @@ router.get('/test', function(req, res) {
 			var titles = $(element).find("a").find("img").attr("titles");
 			var story = $(element).find("a").attr("href");
 			var imgLink = $(element).find("a").find("img").attr("src");
-			var summary = $(element).find(".td-post-text-excerpt").text();
-			summary = summary.replace(/(\r\n|\n|\r|\t|\s+)/gm, " ").trim();
+			var textsummary = $(element).find(".td-post-text-excerpt").text();
+			textsummary = textsummary.replace(/(\r\n|\n|\r|\t|\s+)/gm, " ").trim();
 			result.push({ 
 				Titles: titles,
 				Story: story,
 				Link: imgLink,
-				Summary: summary
+				textSummary: textsummary
 			});
 		});
 		console.log(result);
@@ -51,13 +51,13 @@ router.get('/scrape', function(req, res){
 		    var titles = $(element).find("a").find("img").attr("titles");
 		    var imgLink = $(element).find("a").find("img").attr("src");
 		    var story = $(element).find("a").attr("href");
-		    var summary = $(element).find(".td-post-text-excerpt").text();
-		    summary = summary.replace(/(\r\n|\n|\r|\t|\s+)/gm, " ").trim();
+		    var textsummary = $(element).find(".td-post-text-excerpt").text();
+		    textsummary = textsummary.replace(/(\r\n|\n|\r|\t|\s+)/gm, " ").trim();
 			result[i] = ({ 
 				titles: titles,
 				imgLink: imgLink,
 				story: story,
-				summary: summary
+				textsummary: textsummary
 			});	
 
 			article.findOne({'titles': titles}, function(err, articleRecorded) {
