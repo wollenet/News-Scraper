@@ -108,7 +108,7 @@ router.post('/addcomment/:id', function(req, res){
 		if(err){
 			console.log(err);			
 		} else {
-			console.log("New Comment Added");
+			console.log("Comment Added");
 		}
 	});
 });
@@ -120,7 +120,7 @@ router.get('/deletecomment/:id', function(req, res){
 		if(err){
 			console.log(err);
 		} else {
-			console.log("Comment deleted");
+			console.log("Deleted comment");
 		}
 	})
 });
